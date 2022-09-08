@@ -71,20 +71,20 @@ function checkPair(){
 	card1 = gameArr[0];
 	card2 = gameArr[1];
 	setTimeout(() => {
-	card1.classList.remove("open")
-	card2.classList.remove("open")
-	if (card1.dataset.definition == card2.dataset.definition) {
-		card1.classList.add("hidden")
-		card2.classList.add("hidden")
-	}
-	gameArr = []	
-	count ++
-	console.log(count)
-}, 700);
-	if (count === 6) {
-		count = 0
-		wannaPlay()
-	}
+		card1.classList.remove("open")
+		card2.classList.remove("open")
+		if (card1.dataset.definition == card2.dataset.definition) {
+			card1.classList.add("hidden")
+			card2.classList.add("hidden")
+		}
+		gameArr = []	
+		count ++
+		console.log(count)
+		if (count === 6) {
+			count = 0
+			wannaPlay()
+		}
+	}, 700);
 }
 
 function wannaPlay() {
