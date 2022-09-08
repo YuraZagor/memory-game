@@ -76,9 +76,10 @@ function checkPair(){
 		if (card1.dataset.definition == card2.dataset.definition) {
 			card1.classList.add("hidden")
 			card2.classList.add("hidden")
+			count ++
 		}
 		gameArr = []	
-		count ++
+		
 		console.log(count)
 		if (count === 6) {
 			count = 0
