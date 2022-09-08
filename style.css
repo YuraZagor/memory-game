@@ -2,23 +2,25 @@
 	margin: 0;
 	padding: 0;
 }
-
-.title{
+body {
+	background-color: beige;
+}
+.title, .subtitle {
 	padding: 15px;
 	text-align: center;
-
 }
 
 .container {
+	max-width: 1000px;
+	margin: auto;
 	display: grid;
-	grid-template: repeat(4, 150px)/repeat(4, 130px);
+	grid-template: repeat(3, 130px)/repeat(4, 150px);
 	justify-content: space-around;
-	gap: 4%;
+	gap: 5px;
 	padding: 10px;
-	box-shadow: 2px 2px 30px 2px rgb(15, 15, 14);
+	box-shadow: 2px 2px 30px 2px rgb(56, 56, 54);
 	user-select: none;
-	background-image: url(./img/aniday.jpg);
-	background-size: 110%;
+
 }
 
 .hidden{
@@ -27,7 +29,7 @@
 
 .card {
 	position: relative;
-	perspective: 100px;
+	perspective: 200px;
 	transition: 0.7s;
 	transform-style: preserve-3d;
 }
@@ -44,14 +46,39 @@
 	width: 150px;
 	height: 130px;
 	backface-visibility: hidden;
-
 }
 
 .front {
 	transform: rotateY(0deg);
+	object-fit: contain;
 }
 
 .back {
 	object-fit: contain;
 	transform: rotateY(180deg);
+}
+
+@media(max-width: 790px) {
+	.container {
+		grid-template: repeat(4, 109px)/repeat(3, 126px);
+	}
+	.front, .back {
+		position: absolute;
+		width: 126px;
+		height: 109px;	
+	}
+
+}
+@media(max-width: 450px) {
+	.container {
+		grid-template: repeat(4, 91px)/repeat(3, 105px);
+	}
+	.front, .back {
+		position: absolute;
+		width: 105px;
+		height: 91px;	
+	}
+	.title {
+		display: none;
+	}
 }
