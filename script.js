@@ -60,6 +60,9 @@ container.onclick = function(event) {
 }
 
 function showCard(cardElem){
+	if (gameArr.length > 1) { 
+		return 
+	}
 	cardElem.classList.add("open")
 	gameArr.push(cardElem)
 	if (gameArr.length > 1) {
