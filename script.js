@@ -20,6 +20,8 @@ const cardsArr = [{
 ];
 
 const container = document.querySelector('.container')
+const playAgainEl = document.getElementById('play--again')
+playAgainEl.addEventListener('click', app)
 
 randomArr = [...cardsArr.concat(cardsArr)]
 
@@ -86,17 +88,14 @@ function checkPair(){
 		console.log(count)
 		if (count === 6) {
 			count = 0
-			wannaPlay()
+			playAgainEl.classList.remove('hide--message')
 		}
 	}, 700);
 }
 
-function wannaPlay() {
-	container.innerHTML = '';
-	app() 
-}
-
 function app () {
+	container.innerHTML = ''
+	playAgainEl.classList.add('hide--message')
 	randomizeCards()
 	gameStart()
 }
